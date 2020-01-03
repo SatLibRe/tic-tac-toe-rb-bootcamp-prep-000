@@ -52,7 +52,10 @@ end
 # end
 
 def turn_count(board)
-  board.
+turns = 0 
+  board.each do |element|
+    if element != ""
+  end 
 end 
 
 def won?(board)
