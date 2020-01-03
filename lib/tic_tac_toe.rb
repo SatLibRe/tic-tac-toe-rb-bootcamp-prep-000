@@ -23,7 +23,7 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
-def move(board, index, current_player = "X")
+def move(board, index, current_player)
   board[index] = current_player
 end
 
@@ -46,6 +46,10 @@ def turn(board)
     turn(board)
   end
 end
+
+def turn_count(board)
+  
+end 
 
 def won?(board)
   WIN_COMBINATIONS.detect do |win_array|
@@ -77,4 +81,5 @@ def winner(board)
   end 
    nil  
 end
+
 
