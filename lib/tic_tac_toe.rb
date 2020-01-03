@@ -8,7 +8,7 @@ WIN_COMBINATIONS = [
   [0,4,8],
   [2,4,6]
   ]
-  
+#helper_method  
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
@@ -18,19 +18,19 @@ def display_board(board)
 end
 
 
-
+#helper_method
 def input_to_index(user_input)
   user_input.to_i - 1
 end
-
+#helper_method
 def move(board, index, current_player)
   board[index] = current_player
 end
-
+#helper_method
 def position_taken?(board, location)
   board[location] != " " && board[location] != ""
 end
-
+#helper_method
 def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
@@ -60,7 +60,7 @@ def turn_count(board)
   end 
   turns 
 end 
-
+#helper_method
 def current_player(board)
   if turn_count(board).even? 
     return "X"
@@ -68,16 +68,18 @@ def current_player(board)
   return "O"
 end 
 
+#helper_method
 def won?(board)
   WIN_COMBINATIONS.detect do |win_array|
       board[win_array[0]] == board[win_array[1]] && board[win_array[1]] == board[win_array[2]] && position_taken?(board,win_array[0])
     end 
 end 
 
+#helper_method
 def full?(board)
   board.all? {|element| element == "X" || element == "O" } 
 end 
-
+#helper_method
 def draw?(board)
   full?(board) && !won?(board)
 end 
@@ -100,7 +102,9 @@ def winner(board)
 end
 
 def play(board)
-  turn(board)
-  
+  until over? 
+    turn(board)
+  end 
+  winner(board)
 end 
 
