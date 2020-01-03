@@ -54,7 +54,7 @@ end
 def turn_count(board)
 turns = 0 
   board.each do |element|
-    if element != ""
+    if element != " "
   end 
 end 
 
