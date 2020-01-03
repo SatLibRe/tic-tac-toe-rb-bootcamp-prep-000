@@ -47,3 +47,23 @@ def turn(board)
   end
 end
 
+def won?(board)
+  WIN_COMBINATIONS.detect do |win_array|
+      board[win_array[0]] == board[win_array[1]] && board[win_array[1]] == board[win_array[2]] && position_taken?(board,win_array[0])
+    end 
+end 
+
+def full?(board)
+  board.all? {|element| element == "X" || element == "O" } 
+end 
+
+def draw?(board)
+  full?(board) && !won?(board)
+end 
+
+def over?(board)
+  if won?(board) || draw?(board) || full?(board)
+    return true 
+  end 
+end 
+
