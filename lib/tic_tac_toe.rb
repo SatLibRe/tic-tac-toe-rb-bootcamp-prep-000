@@ -109,7 +109,8 @@ def play(board)
       puts "Congratulations X!"
     elsif winner(board) == "O" 
       puts "Congratulations O!" 
+    elsif winner(board) == nil 
+      puts "Cat's Game!"
     end 
-  puts "Cat's Game!"
 end 
 
