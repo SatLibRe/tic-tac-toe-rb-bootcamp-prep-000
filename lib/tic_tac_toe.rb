@@ -61,6 +61,11 @@ def turn_count(board)
   turns 
 end 
 
+def current_player(board)
+  if turn_count(board)
+  end 
+end 
+
 def won?(board)
   WIN_COMBINATIONS.detect do |win_array|
       board[win_array[0]] == board[win_array[1]] && board[win_array[1]] == board[win_array[2]] && position_taken?(board,win_array[0])
