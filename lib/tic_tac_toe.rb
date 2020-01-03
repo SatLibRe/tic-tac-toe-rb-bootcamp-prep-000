@@ -47,8 +47,12 @@ def turn(board)
   end
 end
 
+# def position_taken?(board, location)
+#   board[location] != " " && board[location] != ""
+# end
+
 def turn_count(board)
-  
+  board.
 end 
 
 def won?(board)
